@@ -5,20 +5,20 @@
 */
 :root {
 
-    --tolima-primary: #0B2545;
+    --tolima-primary: #4DB8C2;
     /* Azul Navy Oscuro (Fondo escudo/textos oscuros) */
-    --tolima-primary-dark: #051325;
+    --tolima-primary-dark: #3A8E96;
     /* Azul Noche (Para degradados profundos) */
 
-    --tolima-accent: #225C96;
+    --tolima-accent: #4DB8C2;
     /* Cian Eléctrico (Reemplaza al Dorado/Gold) */
-    --tolima-accent-light: #E0FCFF;
+    --tolima-accent-light: #E0F7F9;
     /* Cian muy claro para fondos sutiles */
 
-    --tolima-primary-pale: #E6EEF5;
+    --tolima-primary-pale: #F0FCFD;
     /* Azul pálido para fondos secundarios */
 
-    --tolima-secondary: #0056D2;
+    --tolima-secondary: #4DB8C2;
     /* Azul Rey intermedio (Para botones o énfasis) */
 
     /* Mapeo a tus variables antiguas para mantener compatibilidad con tu estructura */
@@ -38,7 +38,7 @@
     /* Sombras y Efectos */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(11, 37, 69, 0.1), 0 2px 4px -1px rgba(11, 37, 69, 0.06);
-    --shadow-header: 0 4px 20px rgba(0, 229, 255, 0.15);
+    --shadow-header: 0 4px 20px rgba(77, 184, 194, 0.2);
 }
 
 * {
@@ -268,13 +268,13 @@ html {
 
 /* Encabezado interno del Chat */
 .chat-header {
-    background: linear-gradient(135deg, var(--tolima-primary) 0%, #004e92 100%);
+    background: #4DB8C2;
     padding: 16px 20px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid var(--tolima-accent);
+    border-bottom: 2px solid #3A8E96;
 }
 
 .assistant-profile {
@@ -373,11 +373,11 @@ df-messenger {
     --df-messenger-chat-background: #ffffff;
 
     /* Mensajes */
-    --df-messenger-message-user-background: var(--tolima-primary);
+    --df-messenger-message-user-background: #4DB8C2;
     /* TU MENSAJE (Vinotinto) */
     --df-messenger-message-user-font-color: #ffffff;
-    --df-messenger-message-bot-background: #f0f4f8;
-    --df-messenger-message-bot-font-color: var(--text-primary);
+    --df-messenger-message-bot-background: #E0F7F9;
+    --df-messenger-message-bot-font-color: #2D6E75;
 
     /* Área de Input (Parte inferior) */
     --df-messenger-input-background: var(--tolima-primary-pale);
@@ -385,11 +385,11 @@ df-messenger {
     --df-messenger-input-font-color: var(--text-primary);
 
     /* ICONOS Y BORDES (VINOTINTO) */
-    --df-messenger-send-icon: var(--tolima-primary);
+    --df-messenger-send-icon: #4DB8C2;
     /* Icono enviar */
     --df-messenger-input-box-border: 1px solid var(--border-color);
     /* Borde reposo */
-    --df-messenger-input-box-focus-border: 2px solid var(--tolima-accent);
+    --df-messenger-input-box-focus-border: 2px solid #4DB8C2;
     /* Borde al escribir */
 
     --df-messenger-input-border-top: 1px solid rgba(11, 37, 69, 0.1);
