@@ -209,6 +209,9 @@ html {
     border: none;
     position: relative;
     z-index: 1;
+    display: block;      /* 1. Elimina el comportamiento de "texto" que deja espacios */
+    vertical-align: top; /* 2. Asegura que se alinee al borde superior */
+    margin-bottom: 0;    /* 3. Garantiza que no haya margen accidental abajo */
 }
 
 /* Loader para el iframe */
