@@ -1,24 +1,18 @@
-
-/* 
-   Variables CSS
+/* Variables CSS
    Definimos los colores corporativos y variables reutilizables 
    para facilitar el mantenimiento del tema.
 */
 :root {
-
     --tolima-primary: #4DB8C2;
     /* Azul Navy Oscuro (Fondo escudo/textos oscuros) */
     --tolima-primary-dark: #3A8E96;
     /* Azul Noche (Para degradados profundos) */
-
     --tolima-accent: #4DB8C2;
     /* Cian Eléctrico (Reemplaza al Dorado/Gold) */
     --tolima-accent-light: #E0F7F9;
     /* Cian muy claro para fondos sutiles */
-
     --tolima-primary-pale: #F0FCFD;
     /* Azul pálido para fondos secundarios */
-
     --tolima-secondary: #4DB8C2;
     /* Azul Rey intermedio (Para botones o énfasis) */
 
@@ -46,8 +40,7 @@
     box-sizing: border-box;
 }
 
-/* 
-   Reset básico y configuración del cuerpo 
+/* Reset básico y configuración del cuerpo 
    Usamos Flexbox en dirección columna para permitir 
    que el header esté arriba y el contenido ocupe el resto.
 */
@@ -116,12 +109,10 @@ html {
 
 .main-title span {
     color: var(--tolima-secondary);
-    /* Azul más claro para "Resuelve" */
 }
 
 .main-title .highlight {
     color: #005fcc;
-    /* Un tono Cian un poco más oscuro para texto blanco */
 }
 
 .sub-title {
@@ -164,17 +155,9 @@ html {
 }
 
 @keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4);
-    }
-
-    50% {
-        box-shadow: 0 0 0 6px rgba(0, 229, 255, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(0, 229, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
 }
 
 /* =========================================
@@ -225,7 +208,6 @@ html {
     justify-content: center;
     background: #fff;
     z-index: 0;
-    /* Detrás del iframe cuando cargue */
     color: var(--text-secondary);
 }
 
@@ -240,9 +222,7 @@ html {
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+    to { transform: rotate(360deg); }
 }
 
 /* --- Panel Derecho: Chat AMAIA --- */
@@ -297,7 +277,6 @@ html {
     border: 2px solid var(--tolima-accent);
     box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
     overflow: hidden;
-    /* Asegura que la imagen no se salga */
 }
 
 .avatar-circle img {
@@ -360,45 +339,30 @@ df-messenger {
 
     --df-messenger-font-color: var(--text-primary);
     --df-messenger-font-family: 'Inter', sans-serif;
-
-    /* Ocultamos el header por defecto */
     --df-messenger-titlebar-background: transparent;
     --df-messenger-titlebar-padding: 0px;
     --df-messenger-titlebar-title-font-size: 0px;
     --df-messenger-titlebar-icon-display: none;
-    /* Forzar ocultamiento del header por defecto */
     --df-messenger-titlebar-display: none;
     --df-messenger-header-height: 0;
     --df-messenger-titlebar-height: 0;
-    /* Colores del Chat */
     --df-messenger-chat-background: #ffffff;
-
-    /* Mensajes */
     --df-messenger-message-user-background: #4DB8C2;
-    /* TU MENSAJE (Vinotinto) */
     --df-messenger-message-user-font-color: #ffffff;
     --df-messenger-message-bot-background: #E0F7F9;
     --df-messenger-message-bot-font-color: #2D6E75;
-
-    /* Área de Input (Parte inferior) */
     --df-messenger-input-background: var(--tolima-primary-pale);
     --df-messenger-input-box-background: #ffffff;
     --df-messenger-input-font-color: var(--text-primary);
-
-    /* ICONOS Y BORDES (VINOTINTO) */
     --df-messenger-send-icon: #4DB8C2;
-    /* Icono enviar */
     --df-messenger-input-box-border: 1px solid var(--border-color);
-    /* Borde reposo */
     --df-messenger-input-box-focus-border: 2px solid #4DB8C2;
-    /* Borde al escribir */
-
     --df-messenger-input-border-top: 1px solid rgba(11, 37, 69, 0.1);
     --df-messenger-send-icon-color: var(--tolima-primary);
 }
 
 /* =========================================
-   4. DISEÑO RESPONSIVO (CORREGIDO)
+   4. DISEÑO RESPONSIVO (CORREGIDO PARA LOOKER STUDIO)
 ========================================= */
 
 @media (max-width: 1024px) {
@@ -407,65 +371,49 @@ df-messenger {
     body,
     html {
         height: auto !important;
-        /* Deja que la página crezca lo necesario */
         min-height: 100vh;
-        /* Al menos el alto de la pantalla */
         overflow-y: auto !important;
-        /* HABILITA EL DESLIZAMIENTO CON EL DEDO */
         overflow-x: hidden;
-        /* Evita movimiento lateral */
         display: block;
-        /* Quitamos el flex del body que bloqueaba todo */
     }
 
     /* 2. DESBLOQUEAR EL CONTENEDOR PRINCIPAL */
     .main-layout {
         height: auto !important;
-        /* Ya no tiene altura fija */
         overflow: visible !important;
-        /* Deja que el contenido se muestre */
         display: flex;
         flex-direction: column;
-        /* Pone uno debajo del otro */
         padding-bottom: 40px;
-        /* Espacio al final para que no se corte */
     }
 
     /* 3. ARREGLO DEL ENCABEZADO (HEADER) */
     .app-header {
         height: auto;
-        /* Altura flexible */
         padding: 10px 15px;
-        /* Menos relleno */
         flex-wrap: wrap;
-        /* Permite acomodar elementos si no caben */
     }
 
     .branding {
         max-width: 100%;
     }
 
-    /* Ajustamos el logo para que no sea gigante */
     .escudo-img {
         height: 45px;
     }
 
-    /* Texto del título más pequeño y limpio */
     .main-title {
         font-size: 0.85rem;
         line-height: 1.2;
     }
 
-    /* OCULTAMOS ELEMENTOS QUE ESTORBAN EN EL CELULAR */
     .sub-title,
     .header-info {
         display: none !important;
-        /* Adiós al subtítulo y al estado "En línea" en celular */
     }
 
-/* 4. PANELES (Dashboard y Chat) - OPTIMIZADO */
+    /* 4. PANELES (Dashboard y Chat) - AJUSTADO PARA ELIMINAR EL HUECO BLANCO */
     .dashboard-panel {
-        height: 65vh; /* Le damos una altura más generosa basada en la pantalla */
+        height: 500px; 
         width: 100%;
         margin: 0;
         margin-bottom: 20px;
@@ -473,24 +421,23 @@ df-messenger {
         border-left: none;
         border-right: none;
         
-        /* Habilitamos scroll horizontal si el iframe es muy ancho */
+        /* Esto crea el scroll horizontal para ver todo el reporte */
         overflow-x: auto !important; 
+        overflow-y: hidden !important; 
         -webkit-overflow-scrolling: touch;
     }
 
     .dashboard-panel iframe {
-        /* Forzamos al iframe a creer que está en una pantalla más grande (1200px) 
-           para que cargue la distribución de PC, y dejamos que el usuario se desplace de lado 
-           o que el reporte use su propio auto-ajuste.
-        */
-        min-width: 1024px; 
-        height: 100%;
+        /* ESTO ELIMINA EL HUECO BLANCO Y OBLIGA AL REPORTE A QUEDAR GRANDE */
+        width: 1100px !important; 
+        height: 100% !important;
         border: none;
     }
 
     .chat-panel {
-        height: 550px; /* Reducimos ligeramente para que no compita tanto en scroll */
+        height: 600px;
         width: 100%;
-        padding: 15px;
-        margin-bottom: 20px;
+        padding: 10px;
+        margin-bottom: 50px;
     }
+}
