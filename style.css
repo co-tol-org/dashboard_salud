@@ -463,24 +463,34 @@ df-messenger {
         /* Adiós al subtítulo y al estado "En línea" en celular */
     }
 
-    /* 4. PANELES (Dashboard y Chat) */
+/* 4. PANELES (Dashboard y Chat) - OPTIMIZADO */
     .dashboard-panel {
-        height: 500px;
-        /* Altura fija segura para el gráfico */
+        height: 65vh; /* Le damos una altura más generosa basada en la pantalla */
         width: 100%;
         margin: 0;
         margin-bottom: 20px;
         border-radius: 0;
-        /* Quitamos bordes redondos para ganar espacio */
         border-left: none;
         border-right: none;
+        
+        /* Habilitamos scroll horizontal si el iframe es muy ancho */
+        overflow-x: auto !important; 
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .dashboard-panel iframe {
+        /* Forzamos al iframe a creer que está en una pantalla más grande (1200px) 
+           para que cargue la distribución de PC, y dejamos que el usuario se desplace de lado 
+           o que el reporte use su propio auto-ajuste.
+        */
+        min-width: 1024px; 
+        height: 100%;
+        border: none;
     }
 
     .chat-panel {
-        height: 600px;
-        /* Altura suficiente para chatear */
+        height: 550px; /* Reducimos ligeramente para que no compita tanto en scroll */
         width: 100%;
-        padding: 10px;
-        margin-bottom: 50px;
+        padding: 15px;
+        margin-bottom: 20px;
     }
-}
