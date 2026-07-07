@@ -382,9 +382,8 @@ df-messenger {
 ========================================= */
 
 @media (max-width: 1024px) {
-    /* 1. FORZAR SCROLL (IMPORTANTE) */
-    body,
-    html {
+    /* 1. FORZAR SCROLL DE LA PÁGINA */
+    body, html {
         height: auto !important;
         min-height: 100vh;
         overflow-y: auto !important;
@@ -398,69 +397,49 @@ df-messenger {
         overflow: visible !important;
         display: flex;
         flex-direction: column;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
     }
 
-    /* 3. ARREGLO DEL ENCABEZADO (HEADER) */
+    /* 3. ARREGLO DEL ENCABEZADO */
     .app-header {
         height: auto;
         padding: 10px 15px;
         flex-wrap: wrap;
     }
 
-    .branding {
-        max-width: 100%;
-    }
+    .branding { max-width: 100%; }
+    .escudo-img { height: 45px; }
+    .main-title { font-size: 0.85rem; line-height: 1.2; }
+    .sub-title, .header-info { display: none !important; }
 
-    .escudo-img {
-        height: 45px;
-    }
-
-    .main-title {
-        font-size: 0.85rem;
-        line-height: 1.2;
-    }
-
-    .sub-title,
-    .header-info {
-        display: none !important;
-    }
-
-    /* 4. PANELES Y CORRECCIÓN DE LOOKER STUDIO PARA MÓVILES */
-    
-    /* El panel externo permite hacer scroll hacia los lados */
+    /* 4. DASHBOARD PROTAGONISTA: Ocupa casi toda la pantalla */
     .dashboard-panel {
-        height: 500px; 
+        height: 85vh; /* 85% de la altura de la pantalla del celular */
         width: 100%;
         margin: 0;
-        margin-bottom: 20px;
         border-radius: 0;
         border: none;
-        
-        overflow-x: auto !important; 
-        overflow-y: hidden !important; 
-        -webkit-overflow-scrolling: touch; 
+        overflow: hidden; 
     }
 
-    /* El Wrapper obliga al navegador móvil a mantener el tamaño de 1100px */
+    /* Retiramos la restricción de 1100px para que fluya natural */
     .iframe-wrapper {
-        width: 1100px !important;
-        min-width: 1100px !important;
+        width: 100% !important;
+        min-width: 100% !important;
         height: 100% !important;
     }
 
-    /* El iframe obedece al wrapper y muestra su tamaño real sin huecos blancos */
     .iframe-wrapper iframe {
         width: 100% !important;
         height: 100% !important;
         border: none;
     }
 
-    /* Panel de Chat AMAIA */
+    /* 5. EL CHAT QUEDA ABAJO: Hay que hacer scroll para verlo */
     .chat-panel {
         height: 600px;
         width: 100%;
-        padding: 10px;
-        margin-bottom: 50px;
+        padding: 15px;
+        margin-bottom: 20px;
     }
 }
