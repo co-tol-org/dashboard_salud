@@ -12,29 +12,24 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
     <link rel="stylesheet" href="style.css?v=1.1">
-    <link rel="stylesheet"
-        href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 </head>
 
 <body>
+    <!-- 1. Encabezado Oficial -->
     <header class="app-header">
         <div class="branding">
-            <img src="https://storage.googleapis.com/gdt-icons/Gobernaci%C3%B3n%20del%20Tolima%20Icon.png"
-                alt="Escudo Gobernación del Tolima" class="escudo-img">
+            <img src="https://storage.googleapis.com/gdt-icons/Gobernaci%C3%B3n%20del%20Tolima%20Icon.png" alt="Escudo Gobernación del Tolima" class="escudo-img">
             <div class="titles">
                 <span class="main-title">Sistema de información estadístico del Tolima - Secretaría de Salud</span>
                 <span class="sub-title">Sistema Inteligente de Consultas de Datos</span>
             </div>
         </div>
-
         <div class="header-info">
             <div class="system-status">
                 <div class="status-indicator"></div>
@@ -43,8 +38,8 @@
         </div>
     </header>
 
+    <!-- 2. Contenido Principal (Dashboard a Pantalla Completa) -->
     <main class="main-layout">
-
         <section class="dashboard-panel">
             <div class="dashboard-loader">
                 <div class="spinner"></div>
@@ -52,46 +47,28 @@
             </div>
 
             <div class="iframe-wrapper">
-                <iframe
-                    src="https://datastudio.google.com/embed/reporting/8b2d3203-1600-4c37-b64f-0b2e0c991942/page/p_4bfhz89xyd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-                </iframe>
+                <iframe src="https://datastudio.google.com/embed/reporting/8b2d3203-1600-4c37-b64f-0b2e0c991942/page/p_4bfhz89xyd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
             </div>
         </section>
-
-        <aside class="chat-panel">
-            <div class="chat-card">
-
-                <div class="chat-header">
-                    <div class="assistant-profile">
-                        <div class="avatar-circle">
-                            <img src="https://storage.googleapis.com/gdt-icons/Amaia%2001.png" alt="AMAIA Avatar"
-                                width="60" height="60">
-                        </div>
-                        <div class="assistant-details">
-                            <h2>AMAIA</h2>
-                            <span>Asistente Virtual</span>
-                        </div>
-                    </div>
-
-                    <button class="btn-reset" id="btn-reset" title="Reiniciar Conversación">
-                        <i class="ph-bold ph-arrow-counter-clockwise"></i>
-                    </button>
-                </div>
-
-                <div class="messenger-wrapper">
-                    <df-messenger location="us-central1" project-id="co-tol-prd"
-                        agent-id="f83029ac-067a-4a64-a8f3-abf4566df50f" allow-feedback="all" language-code="es"
-                        max-query-length="-1" expand="true" intent="Hola">
-                        <df-messenger-chat chat-title="AMAIA" bot-writing-text="Escribiendo..."
-                            placeholder-text="Tu consulta...">
-                        </df-messenger-chat>
-                    </df-messenger>
-                </div>
-            </div>
-        </aside>
     </main>
+
+    <!-- 3. AMAIA (Botón Flotante Nativo) -->
+    <df-messenger 
+        location="us-central1" 
+        project-id="co-tol-prd"
+        agent-id="f83029ac-067a-4a64-a8f3-abf4566df50f" 
+        allow-feedback="all" 
+        language-code="es"
+        max-query-length="-1" 
+        intent="Hola">
+        
+        <df-messenger-chat 
+            chat-title="AMAIA - Asistente Virtual" 
+            bot-writing-text="Escribiendo..."
+            placeholder-text="Tu consulta...">
+        </df-messenger-chat>
+    </df-messenger>
 
     <script src="main.js?v=1.1"></script>
 </body>
-
 </html>
