@@ -61,12 +61,21 @@ body, html {
 .btn-reset:hover { background: var(--tolima-accent); transform: rotate(-15deg); }
 .messenger-wrapper { flex: 1; position: relative; background: #fff; }
 
-/* CONFIGURACIÓN DF-MESSENGER (Esconde el titulo por defecto de Google) */
+/* CONFIGURACIÓN DF-MESSENGER */
 df-messenger {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;
+    
     --df-messenger-font-color: var(--text-primary);
     --df-messenger-font-family: 'Inter', sans-serif;
-    --df-messenger-titlebar-display: none; /* Esto oculta el header nativo feo */
+    
+    /* --- AQUÍ ESTÁ LA MAGIA PARA DESAPARECER LA PALABRA "AMAIA" --- */
+    --df-messenger-titlebar-display: none; 
+    --df-messenger-titlebar-title-font-size: 0px;
+    --df-messenger-titlebar-padding: 0px;
+    --df-messenger-titlebar-height: 0px;
+    --df-messenger-header-height: 0px;
+    /* ------------------------------------------------------------- */
+    
     --df-messenger-chat-background: #ffffff;
     --df-messenger-message-user-background: #4DB8C2;
     --df-messenger-message-user-font-color: #ffffff;
