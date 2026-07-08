@@ -38,8 +38,10 @@
         </div>
     </header>
 
-    <!-- 2. Contenido Principal (Dashboard a Pantalla Completa) -->
+    <!-- 2. Contenido Principal -->
     <main class="main-layout">
+
+        <!-- Panel Izquierdo: Dashboard -->
         <section class="dashboard-panel">
             <div class="dashboard-loader">
                 <div class="spinner"></div>
@@ -50,24 +52,44 @@
                 <iframe src="https://datastudio.google.com/embed/reporting/8b2d3203-1600-4c37-b64f-0b2e0c991942/page/p_4bfhz89xyd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
             </div>
         </section>
+
+        <!-- Panel Derecho: Amaia (Con tu diseño personalizado) -->
+        <aside class="chat-panel" id="chat-panel">
+            <div class="chat-card">
+                <div class="chat-header">
+                    <div class="assistant-profile">
+                        <div class="avatar-circle">
+                            <img src="https://storage.googleapis.com/gdt-icons/Amaia%2001.png" alt="AMAIA Avatar" width="60" height="60">
+                        </div>
+                        <div class="assistant-details">
+                            <h2>AMAIA</h2>
+                            <span>Asistente Virtual</span>
+                        </div>
+                    </div>
+                    <button class="btn-reset" id="btn-reset" title="Reiniciar Conversación">
+                        <i class="ph-bold ph-arrow-counter-clockwise"></i>
+                    </button>
+                </div>
+                <div class="messenger-wrapper">
+                    <df-messenger location="us-central1" project-id="co-tol-prd" agent-id="f83029ac-067a-4a64-a8f3-abf4566df50f" allow-feedback="all" language-code="es" max-query-length="-1" expand="true" intent="Hola">
+                        <df-messenger-chat chat-title="AMAIA" bot-writing-text="Escribiendo..." placeholder-text="Tu consulta..."></df-messenger-chat>
+                    </df-messenger>
+                </div>
+            </div>
+        </aside>
     </main>
 
-    <!-- 3. AMAIA (Botón Flotante Nativo) -->
-    <df-messenger 
-        location="us-central1" 
-        project-id="co-tol-prd"
-        agent-id="f83029ac-067a-4a64-a8f3-abf4566df50f" 
-        allow-feedback="all" 
-        language-code="es"
-        max-query-length="-1" 
-        intent="Hola">
-        
-        <df-messenger-chat 
-            chat-title="AMAIA - Asistente Virtual" 
-            bot-writing-text="Escribiendo..."
-            placeholder-text="Tu consulta...">
-        </df-messenger-chat>
-    </df-messenger>
+    <!-- 3. Botón Flotante para Celulares -->
+    <button id="chat-toggle-btn" class="chat-toggle-btn">
+        <img src="https://storage.googleapis.com/gdt-icons/Amaia%2001.png" alt="AMAIA">
+    </button>
+
+    <!-- 4. Script para abrir/cerrar el chat en móviles -->
+    <script>
+        document.getElementById('chat-toggle-btn').addEventListener('click', function() {
+            document.getElementById('chat-panel').classList.toggle('open');
+        });
+    </script>
 
     <script src="main.js?v=1.1"></script>
 </body>
